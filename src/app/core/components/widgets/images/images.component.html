@@ -1,0 +1,23 @@
+<div class="col-sm-4" *ngIf="imageType =='rounded'">
+			<img src="{{image}}" alt="image" class="img-responsive img-rounded" width="200">
+			<p class="m-t-15 m-b-0">
+					<code>{{imageInfo}}</code>
+			</p>
+</div>
+
+
+<div class="col-sm-4" *ngIf="imageType =='circle'">
+		<img src="{{image}}" alt="image" class="img-responsive img-circle" width="200">
+		<p class="m-t-15 m-b-0">
+		   <code>{{imageInfo}}</code>
+		</p>
+</div>
+
+
+
+<div class="col-sm-4" *ngIf="imageType =='thumbnail'">
+		<img src="{{image}}" alt="image" class="img-responsive img-thumbnail" width="200">
+		<p class="m-t-15 m-b-0">
+				<code>{{imageInfo}}</code>
+		</p>
+</div>

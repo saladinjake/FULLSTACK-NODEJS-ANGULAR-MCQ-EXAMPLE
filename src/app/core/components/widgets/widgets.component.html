@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="rows">
+        <ng-container [ngSwitch]="widget">
+
+                 <ng-container *ngSwitchCase="'banner'" >
+                    <ng-container  *ngTemplateOutlet="bannerTemplates"></ng-container>
+                 </ng-container>
+
+                 <ng-container *ngSwitchCase="'card'">
+                  <ng-container  *ngTemplateOutlet="cards"></ng-container>
+                </ng-container>
+                 <ng-container *ngSwitchCase="'carousel'">
+                 <ng-container  *ngTemplateOutlet="carousels"></ng-container>
+                 </ng-container>
+                 <ng-container *ngSwitchCase="'gallerie'">
+                   <ng-container  *ngTemplateOutlet="galleries"></ng-container>
+                 </ng-container>
+                 <ng-container *ngSwitchCase="'image'">
+                   <ng-container  *ngTemplateOutlet="images"></ng-container>
+                 </ng-container>
+                 <ng-container *ngSwitchCase="'modal'">
+                   <ng-container  *ngTemplateOutlet="modals"></ng-container>
+                 </ng-container>
+                 <ng-container *ngSwitchCase="'product'">
+                    <ng-container  *ngTemplateOutlet="products"></ng-container>
+                 </ng-container>
+                 <ng-container *ngSwitchCase="'video'">
+                   <ng-container  *ngTemplateOutlet="videos"></ng-container>
+                 </ng-container>
+                 <ng-container *ngDefaultCase>
+                    <ng-container  *ngTemplateOutlet="nil"></ng-container>
+                 </ng-container>
+        </ng-container>
+
+
+        <div class="rows">
+            <ng-template #bannerTemplates>
+             <app-banners></app-banners>
+            </ng-template>
+        </div>
+
+        <div class="rows">
+            <ng-template #cards>
+             <app-cardbox></app-cardbox>
+            </ng-template>
+        </div>
+
+        <div class="rows">
+            <ng-template #carousels>
+              <app-carousel></app-carousel>
+            </ng-template>
+        </div>
+
+        <div class="rows">
+            <ng-template #galleries>
+              <app-galery></app-galery>
+            </ng-template>
+        </div>
+
+        <div class="rows">
+            <ng-template #images>
+              <app-images></app-images>
+            </ng-template>
+        </div>
+
+        <div class="rows">
+            <ng-template #modals>
+              <app-modal></app-modal>
+            </ng-template>
+        </div>
+
+
+        <div class="rows">
+            <ng-template #products>
+               <app-product></app-product>
+             </ng-template>
+         </div>
+
+        <div class="rows">
+            <ng-template #videos>
+              <app-video></app-video>
+            </ng-template>
+        </div>
+
+
+        <div class="rows">
+            <ng-template #nil>
+
+            </ng-template>
+        </div>
+
+
+    </div>
+
+
+</div>
