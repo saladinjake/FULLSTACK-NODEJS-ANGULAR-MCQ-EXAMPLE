@@ -4,6 +4,7 @@ const ENCRYPTION_KEY = "KISS-OF-DEATH-IS-THE-SECRET-KEY-TO-LIFE-BEYOND"
 
 import { dummydb, userdb } from '../../models/dummy/dummy.data'
 
+console.log(userdb)
 
 export const verifyToken = (request,response,next) => {
   const token = request.headers('x-access-token');
@@ -52,24 +53,26 @@ export const verifyAdminToken =(request,response,next) =>{
 }
 
 
+let error ="";
+let passed =true;
 export class Validator{
   constructor(){
-    this.passed = true;
-    this.error ="";
+    passed = true;
+    error ="";
   }
   static testTitleValidation(description){
 
   }
   static testIdValidation(id){
     if (typeof id !== 'number') {
-      this.passed = false;
-      this.error = 'Type of id must be a number';
+      passed = false;
+      error = 'Type of id must be a number';
     }
   }
   static testDescriptionValidation(description){
     if (typeof description !== 'string' || description.length > 300) {
-      this.passed = false;
-      this.error = 'Description must be characters not exceeding 300 words';
+      passed = false;
+      error = 'Description must be characters not exceeding 300 words';
     }
   }
   static testAllValidation(data){
@@ -77,7 +80,7 @@ export class Validator{
      Validator.testTitleValidation(data.title);
      Validator.testDescriptionValidation(data.description)
 
-     if(this.passed){
+     if(passed){
        return next()
      }else{
        return  response.status(403).json(
@@ -97,56 +100,57 @@ export class Validator{
 
       const user = userdb.filter(user => user.email == email )
 
-      if(user){
+      if(user.length > 0){
         //if user exist during login then check matching password
-        this.passed = false;
-        this.error = 'User already exist with this email';
+        passed = false;
+        error = 'User already exist with this email';
         return  response.status(404).json(
            {
-             status: 404,
+             status: 400,
              data : [],
              message : "User already exist with this email"
            }
          )
       }
+      return next();
 
+  }
+  static checkPasswordMatch(hashedPassword, password) {
+    return bcrypt.compareSync(hashedPassword, password);
   }
 
   static validateLogin(request,response, next){
     const {email, password} = request.body;
-    this.passed = true;
+    console.log(email,password)
+    passed = true;
     if (typeof email !== 'string' || email.length <= 4) {
-      this.passed = false;
-      this.error = 'Invalid Email';
-
-      return  response.status(403).json(
+      passed = false;
+      return  response.status(400).json(
          {
            status: 400,
            data : [],
-           message : "Invalid Input"
+           message : "Invalid email Input "
          }
        )
     }
 
     if (typeof password !== 'string' || password.length <= 2) {
-      this.passed = false;
-      this.error = 'Invalid Email';
-
-      return  response.status(403).json(
+      passed = false;
+      return  response.status(400).json(
          {
            status: 400,
            data : [],
-           message : "Invalid Input"
+           message : "Invalid password Input"
          }
        )
     }
 
-    const user = userdb.filter(user => user.email == email )
+    const user = userdb.find(user => user.email == email )
+    console.log(user)
 
     if(!user){
       //if user exist during login then check matching password
-      this.passed = false;
-      this.error = 'Invalid Email';
+      passed = false;
       return  response.status(404).json(
          {
            status: 404,
@@ -156,27 +160,31 @@ export class Validator{
        )
     }
 
-    if (!checkMatchPassword(password,user.password)) {
-      this.passed = false;
-      this.error = 'Invalid Email';
+    if(user ){
+      if (!Validator.checkPasswordMatch(password,user.password) ) {
+        passed = false;
 
-      return  response.status(403).json(
-         {
-           status: 400,
-           data : [],
-           message : "Invalid Input"
-         }
-       )
+        return  response.status(400).json(
+           {
+             status: 400,
+             data : [],
+             message : "Password dont match"
+           }
+         )
+      }
+
     }
 
+
+
     //if all is safe
-    if(this.passed){
+    if(passed){
       return next()
     }else{
 
       return  response.status(403).json(
          {
-           status: 400,
+           status: 403,
            data : [],
            message : "Some error occured"
          }
@@ -189,3 +197,6 @@ export class Validator{
 
 
 }
+
+
+export default Validator;

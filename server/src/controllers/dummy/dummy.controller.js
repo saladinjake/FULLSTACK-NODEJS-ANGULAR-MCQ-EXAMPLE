@@ -2,6 +2,7 @@ import { alldbs } from '../../models/index'
 const DUMMY_DATABASE_RECORD_TABLE = alldbs.dummydb;
 const DUMMY_DATABASE_USER_TABLE = alldbs.userdb;
 import {generateToken} from '../../helpers/dummy/validator.helpers';
+import bcrypt from "bcrypt";
 export class DummyController{
   constructor(){
     this.defaultRoute = "index"
@@ -131,11 +132,7 @@ export class DummyController{
 
    static login(request,response){
      const user = DUMMY_DATABASE_USER_TABLE.filter(user => user.email == request.body.email )
-
-     if(user){
-       //if user exist during login then check matching password
-       this.passed = false;
-       this.error = 'Invalid Email';
+     if(user.length > 0){
        return  response.status(200).json(
           {
             status: 200,
@@ -162,12 +159,26 @@ export class DummyController{
 
    static register(request,response){
      //DONT WORRY THE MIDDLE WARE WILL VALIDATE THE POST DATA
-     const {title,description} = request.body;
-     DUMMY_DATABASE_USER_TABLE.push({title,description})
+
+     const {
+       firstname,lastname,
+     //othername: string,
+     user_type,phoneNumber,email,
+     password,username, repeatPassword} = request.body;
+
+     const hashedPassword =  bcrypt.hashSync(password,10);
+     DUMMY_DATABASE_USER_TABLE.push({
+       firstname,lastname,
+     //othername: string,
+     user_type,phoneNumber,email,
+     password: hashedPassword ,username, repeatPassword});
      return response.status(201).json(
      {
       status: 201,
-      data : [{title,description}],
+      data : [{firstname,lastname,
+    //othername: string,
+    user_type,phoneNumber,email,
+    password:hashedPassword,username, repeatPassword}],
       message : "Created New Resource"
      }
     )
