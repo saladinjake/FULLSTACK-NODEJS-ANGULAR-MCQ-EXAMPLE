@@ -37,6 +37,13 @@ import { QuestionsComponent } from './components/questions/questions.component';
 
 
 
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RoomComponent } from './components/room/room.component';
+import { RoomIndexComponent } from './components/roomindex/roomindex.component';
+import {SocketIoModule} from "ngx-socket-io";
+
+
 @NgModule({
   imports: [
     FormsModule,
@@ -44,6 +51,10 @@ import { QuestionsComponent } from './components/questions/questions.component';
     HttpClientModule,
     CommonModule,
     CoreRoutingModule,
+    BrowserAnimationsModule,
+    SocketIoModule.forRoot({
+     url: '/'
+   })
 
   ],
   declarations: [
@@ -62,6 +73,8 @@ import { QuestionsComponent } from './components/questions/questions.component';
     QuestionFormComponent,
     ResultsComponent,
     QuestionsComponent,
+    RoomIndexComponent,
+    RoomComponent,
 
     CoreComponent,
 

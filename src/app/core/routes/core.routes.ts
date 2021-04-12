@@ -14,6 +14,8 @@ import { QuestionFormComponent } from '../components/question-form/question-form
 import { ResultsComponent } from '../components/results/results.component';
 import { QuestionsComponent } from '../components/questions/questions.component';
 
+import { RoomComponent } from '../components/room/room.component';
+import { RoomIndexComponent } from '../components/roomindex/roomindex.component';
 
 export const APP_ROUTES : Routes = [
 
@@ -22,7 +24,9 @@ export const APP_ROUTES : Routes = [
         { path: 'dashboard',  component: LandingpageComponent },
       { path: 'signin', component: LoginComponent},
       { path: 'signup', component: RegisterComponent},
-      { path: ':id', component: QuestionsComponent},
+      { path: 'test:id', component: QuestionsComponent},
     //  { path: '**', component: PageNotFoundComponent}
+      {path: 'chat', component: RoomIndexComponent },
+      {path: 'chat:roomId', component: RoomComponent}
 
 ];
