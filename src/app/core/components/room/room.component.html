@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+
+
+
+<div class="account-pages"></div>
+    <!-- <div class="clearfix"></div>  -->
+    <!--  -->
+      <div class="col-lg-8 col-md-6 hidden-md-down hidden-xs hidden-sm " style='background: #fff  no-repeat fixed left; background-size:contain;'>
+             <div style="padding:13% 0px">
+
+
+
+
+           <div class="container">
+               <!-- Start content -->
+               <div class="content">
+                   <div class="container">
+
+
+           <div class="video-grid">
+             <div *ngFor="let video of videos">
+               <span *ngIf="video.userId !== currentUserId; else currentUserVideoLabel">{{ video.userId }}</span>
+               <ng-template #currentUserVideoLabel>
+                 <span>You</span>
+               </ng-template>
+               <video
+                 [srcObject]="video.srcObject"
+                 (loadedmetadata)="onLoadedMetadata($event)"
+                 [muted]="video.muted"
+               >
+               </video>
+             </div>
+           </div>
+
+
+           </div>
+           </div>
+           </div>
+
+
+
+
+             </div>
+    </div>

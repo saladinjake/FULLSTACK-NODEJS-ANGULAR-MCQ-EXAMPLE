@@ -9,9 +9,19 @@ import { BaseRouter } from '../routes/base.routes';
 import { DummyController } from '../controllers/dummy/dummy.controller';
 import { verifyToken, verifyAdminToken, Validator } from '../middlewares/dummy/dummy.middleware';
 
+//for video confrencing
+import { Server } from 'http';
+import io from 'socket.io';
+import path from 'path';
+
 export class App{
   constructor(){
     this.express = express();
+    //meant for asyn chat
+    this.server = Server(this.express);
+    this.io = io(this.server);
+    this.path = path;
+
     // this.express.use(cors());
     this.express.use(function (req, res, next) {
       res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
@@ -36,6 +46,26 @@ export class App{
       })
     })
     this.port = process.env.PORT || 12000;
+
+    //for build and deploy process to laod files
+    // this.express.use('/static', express.static('public'));
+    //
+    // this.express.get('/**', (req, res) => {
+    //     return res.sendfile(path.join(__dirname + '/public/index.html'));
+    // });
+
+
+    //ADDS THE SOCKET connect
+    this.io.on('connection', socket => {
+          socket.on('join-room', (roomId, userId) => {
+              socket.join(roomId);
+              socket.to(roomId).broadcast.emit('user-connected', userId);
+              socket.on('disconnect', () => {
+                  socket.to(roomId).broadcast.emit('user-disconnected', userId);
+              })
+          });
+      })
+
     // this.express.use('api/v1', this.routes)
     this.express.get('/api/v1/dummy-request',[verifyToken], DummyController.getAll);
     this.express.get('/api/v1/dummy-request/:id', [verifyToken], DummyController.getById);
@@ -47,8 +77,14 @@ export class App{
   }
 
   run(){
-    this.express.listen(this.port,()=>{
-      console.log("Turring api service for node js on port:"+ this.port)
-    })
+    //without socket io chat
+    // this.express.listen(this.port,()=>{
+    //   console.log("Turring api service for node js on port:"+ this.port)
+    // })
+
+    //for socket
+    this.server.listen(this.port,()=>{
+       console.log("Turring api service for node js on port:"+ this.port)
+     })
   }
 }
