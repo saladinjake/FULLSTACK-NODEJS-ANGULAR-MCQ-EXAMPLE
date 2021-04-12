@@ -1,0 +1,107 @@
+[
+  {
+    "label": "How does Angular 4 improved error handling, when an error is caused by something in a template?",
+    "choices": [
+      {
+        "value": "By creating flattened versions of Angular modules",
+        "correct": true
+      },
+      {
+        "value": "By enabling TypeScript's StrictNullChecks",
+        "correct": false
+      },
+      {
+        "value": "By generating source maps in terms of original template",
+        "correct": false
+      },
+      {
+        "value": "None of the mentioned",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "The . . . . . decorator allows us to define the pipe name that is globally available for use in any template in the across application.",
+    "choices": [
+      {
+        "value": "Pipe",
+        "correct": true
+      },
+      {
+        "value": "NgModule",
+        "correct": false
+      },
+      {
+        "value": "Decorator",
+        "correct": false
+      },
+      {
+        "value": "None",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "Observables help you manage . . . . . . . . data.",
+    "choices": [
+      {
+        "value": "asynchronous",
+        "correct": true
+      },
+      {
+        "value": "Both asynchronous & synchronous",
+        "correct": false
+      },
+      {
+        "value": "synchronous",
+        "correct": false
+      },
+      {
+        "value": "procedural",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "How would you display a list of Employees on a webpage along with where they were in the list?",
+    "choices": [
+      {
+        "value": "Loop through and print the index",
+        "correct": false
+      },
+      {
+        "value": "Loop through and print the index and the employee",
+        "correct": true
+      },
+      {
+        "value": "Loop through and print the employees",
+        "correct": false
+      },
+      {
+        "value": "None of the above",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "If you chain multiple pipes together, they are executed",
+    "choices": [
+      {
+        "value": "in parallel",
+        "correct": false
+      },
+      {
+        "value": "LIFO order",
+        "correct": false
+      },
+      {
+        "value": "in the order in which you specify them",
+        "correct": true
+      },
+      {
+        "value": "None",
+        "correct": false
+      }
+    ]
+  }
+]
