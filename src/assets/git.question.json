@@ -1,0 +1,108 @@
+
+[
+  {
+    "label": "What is the default text editor for the Bash shell with a Windows-based Git install?",
+    "choices": [
+      {
+        "value": "Vim",
+        "correct": true
+      },
+      {
+        "value": "notepad",
+        "correct": false
+      },
+      {
+        "value": "Ubuntu Terminal",
+        "correct": false
+      },
+      {
+        "value": "sublime",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "Before you install Git, which of the following prerequisite products must be present and configured on your local OS?",
+    "choices": [
+      {
+        "value": "apache",
+        "correct": false
+      },
+      {
+        "value": "java",
+        "correct": false
+      },
+      {
+        "value": "visual studionc++ ",
+        "correct": false
+      },
+      {
+        "value": "none",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "label": "After you install Git and prior to issuing the first commit, which two configuration properties does the tool expect to be configured?",
+    "choices": [
+      {
+        "value": "username and password",
+        "correct": true
+      },
+      {
+        "value": "user ipaddress",
+        "correct": false
+      },
+      {
+        "value": "user email",
+        "correct": false
+      },
+      {
+        "value": "user password",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "After you initialize a new Git repository and create a file named git-quiz.html, which of the following commands will not work if issued?",
+    "choices": [
+      {
+        "value": "git add .",
+        "correct": false
+      },
+      {
+        "value": "git commit ",
+        "correct": true
+      },
+      {
+        "value": "git add git-quiz.html",
+        "correct": false
+      },
+      {
+        "value": "git status",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "Which command should you use to initialize a new Git repository?",
+    "choices": [
+      {
+        "value": "git launch",
+        "correct": false
+      },
+      {
+        "value": "git make new",
+        "correct": false
+      },
+      {
+        "value": "git start",
+        "correct": false
+      },
+      {
+        "value": "git init",
+        "correct": true
+      }
+    ]
+  }
+]
