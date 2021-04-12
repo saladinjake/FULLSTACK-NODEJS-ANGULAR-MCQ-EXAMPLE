@@ -1,27 +1,39 @@
-# Secondapp
+# Quiz App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+This application was built based on interest.
+A free mcq based application for software developers to test their skills on various Language
+React, Angular, Node js , Git , Php, Laravel . Currently in development. Only 5 questions are available for each subjects taken. Feel free to use the code. Great day guys!!
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+![alt text](https://github.com/saladinjake/quiz-application-software/blob/master/login.jpg?raw=true)
+![alt text](https://github.com/saladinjake/quiz-application-software/blob/master/signup.jpg?raw=true)
+![alt text](https://github.com/saladinjake/quiz-application-software/blob/master/dashboard.jpg?raw=true)
+![alt text](https://github.com/saladinjake/quiz-application-software/blob/master/exam.jpg?raw=true)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Development server setup
+ - Ensure to install node js
+ - Ensure to install @angular/cli, @babel/cli and typescript, yarn or npm globally
+ - download the code or clone this repository to your local machine git clone https://github.com/saladinjake/quiz-application-software
+ - open 2  terminals/command line interface and cd in to the root folder having package.json
+ - run the command yarn install
+ - in the second terminal cd in to the server folder and run yarn install
+ - after successful installation run the following commands
+  - npm run start:debug to start the backend server
+ - ng serve    (to start the front end)
+ 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Demo account 1
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You can signup and then login to take the test too. or just click on the take test without signing
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Demo account 2
+email: adam@gmail.com
+password: apple
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Demo account 3
+email: adam@gmail.com
+password: apple

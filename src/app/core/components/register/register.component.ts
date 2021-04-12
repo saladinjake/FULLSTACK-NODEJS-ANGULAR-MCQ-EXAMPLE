@@ -10,8 +10,6 @@ import {
   Validators,
   ValidationErrors,
   AbstractControl,
-
-
 } from '@angular/forms';
 
 import  { HelpWithSignUp }  from '../../js/SignupChecker';
@@ -35,11 +33,6 @@ export class RegisterComponent implements OnInit {
     passwordRepeat:''
   };
 
-
-
-
-
-
   addForm: FormGroup;
   constructor(private _router: Router, private authService: AuthService, private formBuilder: FormBuilder) {}
   ngOnInit() {
@@ -53,28 +46,23 @@ export class RegisterComponent implements OnInit {
        password: ['', Validators.required],
        phoneNumber: ['', Validators.required],
        repeatPassword: ['', Validators.required,
-       that.passwordsMatchValidator
+       // that.passwordsMatchValidator
      ]
-    //
-
-
 
      })
-
-     //username: ['', Validators.required],
-  // fullname: new FormControl('', [Validators.required]),
  }
 
 
 
 
   passwordsMatchValidator(control: FormControl): ValidationErrors | null {
-    const password = this.addForm.controls['password'];
-    return password && this.addForm.controls['repeatPassword'].value !== this.addForm.controls['password'].value
-      ? {
-          passwordMatch: true,
-        }
-      : null;
+    // const password = this.addForm.controls['password'];
+    // return password && this.addForm.controls['repeatPassword'].value !== this.addForm.controls['password'].value
+    //   ? {
+    //       passwordMatch: true,
+    //     }
+    //   : null;
+    return null;
   }
 
 
@@ -145,7 +133,7 @@ export class RegisterComponent implements OnInit {
         password,username, repeatPassword
 
       ).subscribe(data => {
-        this._router.navigate(['']);
+        this._router.navigate(['/']);
       });
   }
 

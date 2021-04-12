@@ -1,0 +1,108 @@
+
+[
+  {
+    "label": "Which file is responsible for user authentication?",
+    "choices": [
+      {
+        "value": "auth.php",
+        "correct": true
+      },
+      {
+        "value": "cache.php",
+        "correct": false
+      },
+      {
+        "value": "app.php",
+        "correct": false
+      },
+      {
+        "value": "init.php",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "Which file is responsible for the application URL, timezone, localeautoload service provider?",
+    "choices": [
+      {
+        "value": "setup.php",
+        "correct": false
+      },
+      {
+        "value": "config.php",
+        "correct": false
+      },
+      {
+        "value": "cache.php ",
+        "correct": false
+      },
+      {
+        "value": "app.php",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "label": "The _______ directory contains your project’s cache, session and log data.",
+    "choices": [
+      {
+        "value": "Storage",
+        "correct": true
+      },
+      {
+        "value": "Resources",
+        "correct": false
+      },
+      {
+        "value": "public",
+        "correct": false
+      },
+      {
+        "value": "none",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "Which of the following command is use to create controller?",
+    "choices": [
+      {
+        "value": "php artisans makes: controller WelcomeController",
+        "correct": false
+      },
+      {
+        "value": "php artisan makes: controller WelcomeController ",
+        "correct": true
+      },
+      {
+        "value": "php artisan makes: controllers WelcomeController",
+        "correct": false
+      },
+      {
+        "value": "php artisan makes: controller WelcomeController --p",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "Laravel currently support which language?",
+    "choices": [
+      {
+        "value": "mysql",
+        "correct": false
+      },
+      {
+        "value": "postgres",
+        "correct": false
+      },
+      {
+        "value": "sqlite",
+        "correct": false
+      },
+      {
+        "value": "All OF THE ABOVE",
+        "correct": true
+      }
+    ]
+  }
+]

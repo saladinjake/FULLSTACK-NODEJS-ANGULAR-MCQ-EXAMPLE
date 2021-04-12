@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import  { HelpWithLogin }  from '../../js/loginChecker';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -48,7 +49,10 @@ export class LoginComponent implements OnInit {
     if(validationRequest){
       this.authService.login(this.user).subscribe(data => {
         localStorage.setItem('user', JSON.stringify(data));
-        this._router.navigate(['/dashboard']);
+
+        setTimeout(() => {
+          this._router.navigate(['/dashboard']);
+        }, 3000);
       });
     }
 
@@ -58,7 +62,11 @@ export class LoginComponent implements OnInit {
 
   loginThroughObservable(): void {
     this.authService.loginThrough(this.email!, this.password!).subscribe(() => {
-      this._router.navigateByUrl('/');
+    
+      setTimeout(() => {
+        this._router.navigateByUrl('/dashboard');
+      }, 3000);
+
     });
     // console.log(this.email!, this.password!)
   }

@@ -1,0 +1,46 @@
+[
+    {
+      "label": "Javascript Node js",
+      "name": "nodejs-question",
+      "description": "Node js backend language",
+      "fileName": "nodejs-question.json",
+      "queryId":"nodejs-test"
+    },
+    {
+      "label": "Angular 2+",
+      "name": "angular-question",
+      "description": "Frontend Angular framework",
+      "fileName": "angular-question.json",
+      "queryId":"angular-test"
+    },
+    {
+    "label": "React js",
+    "name": "react-question",
+    "description": "Frontend react js test",
+    "fileName": "react-question.json",
+    "queryId":"react-test"
+    },
+    {
+    "label": "Laravel",
+    "name": "laravel-question",
+    "description": "Laravel backend mcq",
+    "fileName": "laravel-question.json",
+    "queryId":"laravel"
+
+  },
+  {
+  "label": "Php",
+  "name": "php-question",
+  "description": "Php backend mcq",
+  "fileName": "php-question.json",
+  "queryId":"php-test"
+},
+
+  {
+  "label": "Git",
+  "name": "git-question",
+  "description": "Git tools",
+  "fileName": "git-question.json",
+  "queryId":"git-test"
+  }
+  ]
