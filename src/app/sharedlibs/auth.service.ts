@@ -9,29 +9,44 @@ import { User, AuthResponse } from './interface/index';
 
 import { TokenStorage } from './token.store';
 
+import {  HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private user$ = new BehaviorSubject<User | null>(null); // new Subject<User | nul>(null) //you can use subject
+  public httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      // 'Authorization': token
+    })
+  };
 
   constructor(private _router: Router, private _http: HttpClient,private _tokenStorage:TokenStorage) { }
   //simple registration without observables
   register(user) {
-    return this._http.post( `${API_URL}/signup`, user);
+    return this._http.post( `${API_URL}/signup`, user,this.httpOptions);
   }
   //simple login with out observables
   login(user) {
-    return this._http.post( `${API_URL}/signin`, user);
+    // let token;
+        // if (this._auth.isAuthenticated()) {
+        //   const user = JSON.parse(this._auth.isAuthenticated());
+        //   token = user.token ? user.token : '';
+        // }
+
+    return this._http.post( `${API_URL}/signin`, user, this.httpOptions);
   }
 
   sendForgetPasswordInstruction(user){
-      return this._http.post( `${API_URL}/password-forgot`, user);
+      return this._http.post( `${API_URL}/password-forgot`, user,this.httpOptions);
   }
 
   changePassword(user){
-      return this._http.post( `${API_URL}/password-reset`, user);
+      return this._http.post( `${API_URL}/password-reset`, user,this.httpOptions);
   }
 
   //regular logout without observables
@@ -52,7 +67,7 @@ export class AuthService {
   loginThrough(email: string, password: string): Observable<User> {
     let that  = this;
     return this._http
-      .post<AuthResponse>(`${API_URL}/signin`, { email, password })
+      .post<AuthResponse>(`${API_URL}/signin`, { email, password },this.httpOptions)
       .pipe(
         tap(({ token, user }) => {
           that.setUser(user);
@@ -72,7 +87,7 @@ export class AuthService {
      password: string,username: string, repeatPassword: string
    ): Observable<User> {
      return this._http
-       .post<AuthResponse>(`${API_URL}/api/auth/register`, {
+       .post<AuthResponse>(`${API_URL}/signup`, {
          firstname,
          lastname,
          //othernames,
@@ -81,7 +96,7 @@ export class AuthService {
          email,
          password,
          repeatPassword
-       })
+       }, this.httpOptions)
        .pipe(
          tap(({ token, user }) => {
            this.setUser(user);
@@ -129,7 +144,7 @@ export class AuthService {
       return EMPTY;
     }
 
-    return this._http.get<AuthResponse>(`${API_URL}/api/auth/token-matches-user`).pipe(
+    return this._http.get<AuthResponse>(`${API_URL}/token-matches-user`,this.httpOptions).pipe(
       tap(({ user }) => this.setUser(user)),
       pluck('user')
     );

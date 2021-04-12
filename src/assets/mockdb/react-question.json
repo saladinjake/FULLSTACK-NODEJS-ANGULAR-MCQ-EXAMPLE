@@ -1,0 +1,109 @@
+[
+  {
+    "label": "What is ReactJS?",
+    "choices": [
+      {
+        "value": "both server side and ui frontend framwork",
+        "correct": true
+      },
+      {
+        "value": "Server-side Framework",
+        "correct": false
+      },
+
+      
+      {
+        "value": "User-interface framework",
+        "correct": false
+      },
+      {
+        "value": "None of the above mentioned",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "What are the limitations of ReactJS?",
+    "choices": [
+      {
+        "value": "React is only for view layer of the app so we still need the help of other technologies to get a complete tooling set for development",
+        "correct": false
+      },
+      {
+        "value": " React is using inline templating and JSX. This can seem awkward to some developers",
+        "correct": false
+      },
+      {
+        "value": "The library of react is too large",
+        "correct": false
+      },
+      {
+        "value": " All of these",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "label": "How can you access the state of a component from inside of a member function?",
+    "choices": [
+      {
+        "value": "this.state",
+        "correct": true
+      },
+      {
+        "value": "this.prototype.stateValue",
+        "correct": false
+      },
+      {
+        "value": "this.getState()",
+        "correct": false
+      },
+      {
+        "value": "this.setState()",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "Props are __________ into other components",
+    "choices": [
+      {
+        "value": "Injected",
+        "correct": false
+      },
+      {
+        "value": "Methods",
+        "correct": true
+      },
+      {
+        "value": "Both A and B",
+        "correct": false
+      },
+      {
+        "value": "None of the above",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "Which of the following API is a MUST for every ReactJS component?",
+    "choices": [
+      {
+        "value": "initialize",
+        "correct": false
+      },
+      {
+        "value": "getInitialState",
+        "correct": false
+      },
+      {
+        "value": "renderComponent",
+        "correct": true
+      },
+      {
+        "value": "render",
+        "correct": false
+      }
+    ]
+  }
+]

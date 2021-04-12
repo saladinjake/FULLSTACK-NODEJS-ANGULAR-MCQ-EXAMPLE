@@ -9,8 +9,6 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ForgetpasswordComponent } from './components/forgetpassword/forgetpassword.component';
-import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
-import { IdlestateComponent } from './components/idlestate/idlestate.component';
 
 
 //presentational component
@@ -23,17 +21,6 @@ import { UserheaderComponent } from './components/header/userheader/userheader.c
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UsersidebarComponent } from './components/sidebar/usersidebar/usersidebar.component';
-import { AdminsidebarComponent } from './components/sidebar/adminsidebar/adminsidebar.component';
-//widgets component
-import { WidgetsComponent } from './components/widgets/widgets.component';
-import { VideoComponent } from './components/widgets/video/video.component';
-import { ImagesComponent } from './components/widgets/images/images.component';
-import { BannersComponent } from './components/widgets/banners/banners.component';
-import { GalleryComponent } from './components/widgets/gallery/gallery.component';
-import { CarouselComponent } from './components/widgets/carousel/carousel.component';
-import { ModalComponent } from './components/widgets/modal/modal.component';
-import { ProductComponent } from './components/widgets/product/product.component';
-import { CardboxComponent } from './components/widgets/cardbox/cardbox.component';
 
 
 //main layout component
@@ -42,6 +29,13 @@ import { CoreRoutingModule } from './routes/core-routing.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
+
+import { QuestionFormComponent } from './components/question-form/question-form.component';
+import { ResultsComponent } from './components/results/results.component';
+import { QuestionsComponent } from './components/questions/questions.component';
+
+
 
 @NgModule({
   imports: [
@@ -58,31 +52,20 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    WidgetsComponent,
-    VideoComponent,
-    ImagesComponent,
-    BannersComponent,
     UsersidebarComponent,
-    AdminsidebarComponent,
-    AdminheaderComponent,
-    UserheaderComponent,
-    GalleryComponent,
-    CarouselComponent,
-    ModalComponent,
-    ProductComponent,
-    CardboxComponent,
 
     //routable components
-  
     LoginComponent,
     RegisterComponent,
     ForgetpasswordComponent,
-    ChangepasswordComponent,
-    IdlestateComponent,
+    LandingpageComponent,
+    QuestionFormComponent,
+    ResultsComponent,
+    QuestionsComponent,
 
     CoreComponent,
 
-    LandingpageComponent,
+
   ],
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

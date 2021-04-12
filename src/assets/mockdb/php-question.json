@@ -1,0 +1,108 @@
+
+[
+  {
+    "label": "PHP Stands for?",
+    "choices": [
+      {
+        "value": "PHP Hypertext Preprocessor",
+        "correct": true
+      },
+      {
+        "value": "PHP Hyperprerocess Preprocessor",
+        "correct": false
+      },
+      {
+        "value": "PHP",
+        "correct": false
+      },
+      {
+        "value": "Personal home preprocessor",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "PHP is an example of ___________ scripting language.",
+    "choices": [
+      {
+        "value": "frontend",
+        "correct": false
+      },
+      {
+        "value": "frontend and backend",
+        "correct": false
+      },
+      {
+        "value": "middle end edge framework",
+        "correct": false
+      },
+      {
+        "value": "Server-side",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "label": "Which of the following is not true?",
+    "choices": [
+      {
+        "value": "PHP can not be embedded into html.",
+        "correct": true
+      },
+      {
+        "value": "PHP can be used to develop web applications.",
+        "correct": false
+      },
+      {
+        "value": "PHP makes a website dynamic",
+        "correct": false
+      },
+      {
+        "value": "PHP applications can not be compile",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "PHP scripts are enclosed within _______",
+    "choices": [
+      {
+        "value": "<php> . . . </php>",
+        "correct": false
+      },
+      {
+        "value": "<?php . . . ?>",
+        "correct": true
+      },
+      {
+        "value": "<p> . . . </p>",
+        "correct": false
+      },
+      {
+        "value": "None of the above",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "Which of the following API is a MUST for every ReactJS component?",
+    "choices": [
+      {
+        "value": "initialize",
+        "correct": false
+      },
+      {
+        "value": "getInitialState",
+        "correct": false
+      },
+      {
+        "value": "renderComponent",
+        "correct": true
+      },
+      {
+        "value": "render",
+        "correct": false
+      }
+    ]
+  }
+]

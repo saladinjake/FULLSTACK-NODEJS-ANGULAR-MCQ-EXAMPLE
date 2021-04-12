@@ -1,0 +1,64 @@
+<app-header></app-header>
+<h1>Dash board</h1>
+
+
+
+
+
+
+      <div class="col-lg-8 col-md-6 hidden-md-down hidden-xs hidden-sm " style='background:  #fff  no-repeat fixed left; background-size:contain;'>
+<div style="padding:10% 0px">
+                <div class="question-container" >
+                  <div *ngIf="quiz && !questions" >
+                    Ready set go timer:
+                  </div>
+                  <div *ngIf="questions" class="quiz">
+                    <div *ngIf="!showResults" class="questions">
+
+                      <app-question-form [question]="questions[currentQuestionIndex]" (onChoiceMade)="updateChoice($event)">
+                      </app-question-form>
+                      <div align="center">
+                        <button  class="btn btn-success" color="primary" (click)="nextOrViewResults()"
+                          [disabled]="!answers.values[currentQuestionIndex]">
+                          {{currentQuestionIndex === questions.length -1 ? 'View results' : 'Next'}}
+                        </button>
+                      </div>
+
+                    </div>
+                    <app-results *ngIf="showResults" [answers]="answers" [questions]="questions"></app-results>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 pull-right" style='background:#fff;height:600px'>
+<div style="padding:5% 0px">
+      <div class="card-box">
+        <div class="panel-heading">
+          <h3 class="text-center"><strong class="text-custom"><!-- <img class="logo-wide" src="assets/images/CommuteLogos-02.png"/> -->
+
+               <a href="#" style="font-size:20px;margin-top:30px" class="waves-effect waves-light">Quiz Tester Timer</a>
+                           <br/>
+
+          </strong></h3>
+        </div>
+
+        <div class="panel-body" style="margin-top:-44px;">
+                  <div id="clock"></div>
+                  <div id="count-down"></div>
+
+          <h4>Instructions</h4>
+            <p>Each question takes a count down time to 2mins. There are no negative markings. Ensure to answer all questions</p>      
+
+        </div>
+
+        <div class="row m-t-20">
+        <div class="col-sm-12 text-center">
+          <p>
+             GrowDemoTeam <a routerLink="../" class="text-primary m-l-5"><b>Team spirit</b></a>
+          </p>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </div>

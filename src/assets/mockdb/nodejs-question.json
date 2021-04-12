@@ -1,0 +1,108 @@
+
+[
+  {
+    "label": "Which of the following is true about RESTful web services?",
+    "choices": [
+      {
+        "value": "B and C",
+        "correct": true
+      },
+      {
+        "value": "Webservices based on REST Architecture are known as RESTful web services",
+        "correct": false
+      },
+      {
+        "value": "Webservices uses HTTP methods to implement the concept of REST architecture",
+        "correct": false
+      },
+      {
+        "value": "None of the abover",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "The Node.js modules can be exposed using",
+    "choices": [
+      {
+        "value": "module",
+        "correct": false
+      },
+      {
+        "value": "module.expose",
+        "correct": false
+      },
+      {
+        "value": "All of the above",
+        "correct": false
+      },
+      {
+        "value": "module.exports",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "label": "In Nodejs how node based web servers differ from traditional web servers?",
+    "choices": [
+      {
+        "value": "Node based server uses a single threaded model and can serve much larger number of requests compared to any traditional server like Apache HTTP Server.",
+        "correct": true
+      },
+      {
+        "value": "Node based server process request much faster than traditional server.",
+        "correct": false
+      },
+      {
+        "value": "All of the above",
+        "correct": false
+      },
+      {
+        "value": "None",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "Which statement executes the code of sample.js file?",
+    "choices": [
+      {
+        "value": "nodejs sample.j",
+        "correct": false
+      },
+      {
+        "value": "node sample.js",
+        "correct": true
+      },
+      {
+        "value": "npm start sample.js",
+        "correct": false
+      },
+      {
+        "value": "npm run sample.js",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "label": "What are the key features of Node.js?",
+    "choices": [
+      {
+        "value": "Builds fast and scalable network Applications",
+        "correct": false
+      },
+      {
+        "value": "Highly scalable servers for Web Applications",
+        "correct": false
+      },
+      {
+        "value": "Real time Data intensive",
+        "correct": false
+      },
+      {
+        "value": "All of the above",
+        "correct": true
+      }
+    ]
+  }
+]
