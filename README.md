@@ -2,7 +2,7 @@
 
 This application was built based on interest.
 A free mcq based application for software developers to test their skills on various Language
-React, Angular, Node js , Git , Php, Laravel . Currently in development. Only 5 questions are available for each subjects taken. Feel free to use the code. Great day guys!!
+React, Angular, Node js , Git , Php, Laravel . Currently in development. Only 5 questions are available for each subjects taken
 
 
 
